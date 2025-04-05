@@ -1,0 +1,12 @@
+
+services:
+
+  synapse:
+    image: matrixdotorg/synapse:latest
+    restart: unless-stopped
+    container_name: synapse
+    user: "${UID:-991}:${GID:-991}"
+    ports:
+    - 8008:8008
+    volumes:
+    - ./data:/data
